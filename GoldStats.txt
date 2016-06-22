@@ -1,0 +1,10 @@
+## Title: Gold Stats
+## APIVersion: 100015
+## Version: 0.1
+## Description: Tracks gold earnt and spent for current session and since last reset. Reset current/all character(s) with '/goldstats reset' and '/goldstats resetall'
+## Authors: H-B
+## SavedVariables: GoldStatsSavedVariables
+
+
+GoldStats.xml
+GoldStats.lua

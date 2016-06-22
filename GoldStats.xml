@@ -1,0 +1,131 @@
+<GuiXml>
+	<Controls>
+		<TopLevelControl name="GoldStatsIndicator" mouseEnabled="true" movable="true" clampedToScreen="true">
+			<Dimensions x="255" y="305" />
+			<Anchor point="BOTTOM" relativeTo="GuiRoot" relativePoint="CENTER" offsetY="-20" />
+			
+			<OnMoveStop>GoldStats.OnIndicatorMoveStop()</OnMoveStop>
+
+			<Controls>
+				<Label name="$(parent)PlayerNameText" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="00ffa5" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="LEFT" text="">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="0"/>
+				</Label>
+
+				<Label name="$(parent)StartGoldLastReset" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="c5c296" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="LEFT" text="Last Reset:">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="20"/>
+				</Label>
+				<Label name="$(parent)StartGoldLastResetText" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="FFAD00" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="RIGHT" text="">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="20"/>
+				</Label>
+				
+				<Label name="$(parent)GoldInLastReset" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="c5c296" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="LEFT" text="Income:">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="40"/>
+				</Label>
+				<Label name="$(parent)GoldInLastResetText" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="57FF00" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="RIGHT" text="">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="40"/>
+				</Label>
+				
+				<Label name="$(parent)GoldOutLastReset" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="c5c296" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="LEFT" text="Expenses:">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="60"/>
+				</Label>
+				<Label name="$(parent)GoldOutLastResetText" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="FF2F00" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="RIGHT" text="">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="60"/>
+				</Label>
+
+				<Label name="$(parent)StartGoldThisSession" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="879b7d" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="LEFT" text="This Session:">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="85"/>
+				</Label>
+				<Label name="$(parent)StartGoldThisSessionText" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="FFAD00" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="RIGHT" text="">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="85"/>
+				</Label>
+				
+				<Label name="$(parent)GoldInThisSession" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="879b7d" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="LEFT" text="Income:">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="105"/>
+				</Label>
+				<Label name="$(parent)GoldInThisSessionText" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="57FF00" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="RIGHT" text="">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="105"/>
+				</Label>
+				
+				<Label name="$(parent)GoldOutThisSession" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="879b7d" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="LEFT" text="Expenses:">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="125"/>
+				</Label>
+				<Label name="$(parent)GoldOutThisSessionText" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="FF2F00" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="RIGHT" text="">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="125"/>
+				</Label>
+
+				<Label name="$(parent)Balance" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="c5c296" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="LEFT" text="Balance:">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="150"/>
+				</Label>
+				<Label name="$(parent)BalanceText" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="FFFE00" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="RIGHT" text="">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="8" offsetY="150"/>
+				</Label>
+				
+				<Label name="$(parent)AllLastReset" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="4d6aff" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="LEFT" text="All Last Reset:">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="BOTTOMLEFT" offsetX="8" offsetY="-115"/>
+				</Label>
+				<Label name="$(parent)AllLastResetText" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="FFAD00" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="RIGHT" text="">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="BOTTOMLEFT" offsetX="8" offsetY="-115"/>
+				</Label>
+				
+				<Label name="$(parent)AllIncome" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="4d6aff" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="LEFT" text="All Income:">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="BOTTOMLEFT" offsetX="8" offsetY="-95"/>
+				</Label>
+				<Label name="$(parent)AllIncomeText" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="57FF00" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="RIGHT" text="">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="BOTTOMLEFT" offsetX="8" offsetY="-95"/>
+				</Label>
+				
+				<Label name="$(parent)AllExpenses" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="4d6aff" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="LEFT" text="All Expenses:">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="BOTTOMLEFT" offsetX="8" offsetY="-75"/>
+				</Label>
+				<Label name="$(parent)AllExpensesText" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="FF2F00" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="RIGHT" text="">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="BOTTOMLEFT" offsetX="8" offsetY="-75"/>
+				</Label>
+
+				<Label name="$(parent)AllBank" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="4d6aff" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="LEFT" text="Bank:">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="BOTTOMLEFT" offsetX="8" offsetY="-55"/>
+				</Label>
+				<Label name="$(parent)AllBankText" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="4d6aff" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="RIGHT" text="">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="BOTTOMLEFT" offsetX="8" offsetY="-55"/>
+				</Label>				
+
+				<Label name="$(parent)AllBalance" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="4d6aff" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="LEFT" text="All Balance:">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="BOTTOMLEFT" offsetX="8" offsetY="-30"/>
+				</Label>
+				<Label name="$(parent)AllBalanceText" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="FFFE00" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="RIGHT" text="">
+					<Dimensions x="245" y="30" />
+					<Anchor point="TOPLEFT" relativeTo="$(parent)" relativePoint="BOTTOMLEFT" offsetX="8" offsetY="-30"/>
+				</Label>
+				
+				<Backdrop name="$(parent)Backdrop" alpha="0.50" centerColor="000000" edgeColor="dddddd" pixelRoundingEnabled="true" layer="0" level="0">
+					<Dimensions x="255" y="305" />
+					<Edge edgeSize="2" />
+					<Anchor point="CENTER" relativeTo="$(parent)" relativePoint="CENTER" />
+				</Backdrop>
+			</Controls>
+		</TopLevelControl>
+	</Controls>
+</GuiXml>
