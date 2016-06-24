@@ -267,12 +267,20 @@ local function slashHandler(userInput)
 	local parsedUserInput = {string.match(userInput,"^(%S*)%s*(.-)$")}
 	local command = {}
 	local n = #parsedUserInput;
+	command[1] = "help";
 	for i=1, n do
 		if (parsedUserInput[i] ~= nil and parsedUserInput[i] ~= "") then
 			command[i] = string.lower(parsedUserInput[i]);
 		end
 	end
 
+	if ("help" == command[1]) then
+		d("Available Goldstats commands");
+		d("/goldstats reset (resets current characters stats)");
+		d("/goldstats resetall (resets all characters stats)");
+		return;
+	end
+	
 	if ("reset" == command[1]) then
 		GoldStats:Reset();
 		d("reset this chacracter");
