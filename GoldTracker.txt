@@ -2,7 +2,7 @@
 ## APIVersion: 100015
 ## Version: 1.0.0
 ## Description: Tracks gold earnt and spent for current session and since last reset. Usage: '/goldtracker' for list of commands
-## Authors: H-B
+## Author: redeby
 ## SavedVariables: GoldTrackerSavedVariables
 
 
