@@ -1,10 +1,10 @@
-## Title: Gold Stats
+## Title: Gold Tracker
 ## APIVersion: 100015
 ## Version: 1.0.0
-## Description: Tracks gold earnt and spent for current session and since last reset. Usage: '/goldstats' for list of commands
+## Description: Tracks gold earnt and spent for current session and since last reset. Usage: '/goldtracker' for list of commands
 ## Authors: H-B
-## SavedVariables: GoldStatsSavedVariables
+## SavedVariables: GoldTrackerSavedVariables
 
 
-GoldStats.xml
-GoldStats.lua
+GoldTracker.xml
+GoldTracker.lua
