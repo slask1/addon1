@@ -1,10 +1,10 @@
 <GuiXml>
 	<Controls>
-		<TopLevelControl name="GoldStatsIndicator" mouseEnabled="true" movable="true" clampedToScreen="true">
+		<TopLevelControl name="GoldTrackerIndicator" mouseEnabled="true" movable="true" clampedToScreen="true">
 			<Dimensions x="255" y="305" />
 			<Anchor point="BOTTOM" relativeTo="GuiRoot" relativePoint="CENTER" offsetY="-20" />
 			
-			<OnMoveStop>GoldStats.OnIndicatorMoveStop()</OnMoveStop>
+			<OnMoveStop>GoldTracker.OnIndicatorMoveStop()</OnMoveStop>
 
 			<Controls>
 				<Label name="$(parent)PlayerNameText" layer="0" level="1" font="ZoFontChat" inheritAlpha="true" color="00ffa5" wrapMode="TRUNCATE" verticalAlignment="CENTER" horizontalAlignment="LEFT" text="">
