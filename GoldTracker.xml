@@ -3,7 +3,7 @@
 		<TopLevelControl name="GoldTrackerGuiOverview" mouseEnabled="true" movable="true" clampedToScreen="true">
 			<Dimensions x="255" y="305" />
 			<Anchor point="BOTTOM" relativeTo="GuiRoot" relativePoint="CENTER" offsetY="-20" />
-			<OnMoveStop>GoldTracker.OnIndicatorMoveStop()</OnMoveStop>
+			<OnMoveStop>GoldTracker.OnGuiOverviewMoveStop()</OnMoveStop>
 			<Controls>
 				<Backdrop name="$(parent)Backdrop" alpha="0.50" centerColor="000000" edgeColor="dddddd" pixelRoundingEnabled="true" layer="0" level="0">
 					<Dimensions x="255" y="305" />
