@@ -202,7 +202,7 @@ function GoldTracker.UpdateAllAlts()
 	for i=1, numchars do
 		charname = GoldTracker.savedVariablesAccount.charlist[i];
 		if (charname ~= GetUnitName("Player")) then
-			mylabel = "GoldTrackerGuiOverviewAlt"..index
+			mylabel = "GoldTrackerGuiOverviewAltLabel"..index
 			Alt = wm:CreateControl(mylabel, GoldTrackerGuiOverview, CT_LABEL);
 			Alt:SetColor(0.53, 0.61, 0.49, 1)
 			Alt:SetFont("ZoFontChat")
