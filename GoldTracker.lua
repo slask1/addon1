@@ -28,7 +28,6 @@ function GoldTracker:Initialize()
 	GoldTracker.GoldInThisSession=0
 	GoldTracker.GoldOutThisSession=0
 	GoldTracker.diff=0
-	
 	EVENT_MANAGER:RegisterForEvent(self.name, EVENT_MONEY_UPDATE, self.OnPlayerMoneyUpdate)
 	EVENT_MANAGER:RegisterForEvent(self.name, EVENT_BANKED_MONEY_UPDATE, self.OnBankMoneyUpdate)
 	self.savedVariables = ZO_SavedVars:New("GoldTrackerSavedVariables", 1, nil, LastResetDefaults)
@@ -37,7 +36,6 @@ function GoldTracker:Initialize()
 	GoldTracker.UpdateCharList(GetUnitName("Player"));
 
 	GoldTrackerGuiOverview:SetParent(ZO_PlayerInventory)
-	
 	GoldTracker:UpdateStartGoldLastReset()
 	GoldTracker:UpdateGoldInLastReset()
 	GoldTracker:UpdateGoldOutLastReset()
@@ -50,11 +48,8 @@ function GoldTracker:Initialize()
 	GoldTracker:UpdateAllExpenses()
 	GoldTracker:UpdateAllBank()
 	GoldTracker:UpdateAllBalance()
-
 	GoldTracker:UpdatePlayerName()
-
 	GoldTracker:UpdateAllAlts()
-
 end
 
 
@@ -65,7 +60,6 @@ function GoldTracker.Reset()
 	GoldTracker.StartGoldThisSession=GetCurrentMoney()
 	GoldTracker.GoldInThisSession=0
 	GoldTracker.GoldOutThisSession=0
-
 	GoldTracker.savedVariables.resetBalance=GetCurrentMoney()
 	GoldTracker.savedVariables.income=0
 	GoldTracker.savedVariables.expenses=0
@@ -83,7 +77,6 @@ function GoldTracker.Reset()
 	GoldTracker:UpdateAllExpenses()
 	GoldTracker:UpdateAllBank()
 	GoldTracker:UpdateAllBalance()
-	
 end
 
 -- Adds the charactername to the list of characters using this addon
