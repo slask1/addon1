@@ -1,0 +1,11 @@
+## Title: Gold Tracker (v2.0.0)
+## APIVersion: 100015
+## Version: 2.0.0
+## Description: Tracks gold earnt and spent for current session and since last reset. Usage: '/goldtracker' for list of commands
+## Author: redeby
+## SavedVariables: GoldTrackerSavedVariables
+
+
+GoldTracker.xml
+GoldTracker.lua
+GoldTrackerGui.lua
