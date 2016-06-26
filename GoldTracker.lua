@@ -36,12 +36,12 @@ function GoldTracker:Initialize()
 	self:RestorePosition();
 	GoldTracker.UpdateCharList(GetUnitName("Player"));
 
-	GoldTrackerIndicator:SetParent(ZO_PlayerInventory)
+	GoldTrackerGuiOverview:SetParent(ZO_PlayerInventory)
 	
-	GoldTracker:UpdateStartGoldLastResetText()
+	GoldTracker:UpdateStartGoldLastReset()
 	GoldTracker:UpdateGoldInLastReset()
 	GoldTracker:UpdateGoldOutLastReset()
-	GoldTracker:UpdateStartGoldThisSessionText()
+	GoldTracker:UpdateStartGoldThisSession()
 	GoldTracker:UpdateGoldInThisSession()
 	GoldTracker:UpdateGoldOutThisSession()
 	GoldTracker:UpdateBalance()
@@ -51,7 +51,7 @@ function GoldTracker:Initialize()
 	GoldTracker:UpdateAllBank()
 	GoldTracker:UpdateAllBalance()
 
-	GoldTrackerIndicatorPlayerNameText:SetText(GetUnitName("Player"));
+	GoldTrackerGuiOverviewPlayerName:SetText(GetUnitName("Player"));
 
 	GoldTracker:UpdateAllAlts()
 
@@ -67,10 +67,10 @@ function GoldTracker.Reset()
 	GoldTracker.savedVariables.expenses=0
 	GoldTracker.diff=0
 
-	GoldTracker:UpdateStartGoldLastResetText()
+	GoldTracker:UpdateStartGoldLastReset()
 	GoldTracker:UpdateGoldInLastReset()
 	GoldTracker:UpdateGoldOutLastReset()
-	GoldTracker:UpdateStartGoldThisSessionText()
+	GoldTracker:UpdateStartGoldThisSession()
 	GoldTracker:UpdateGoldInThisSession()
 	GoldTracker:UpdateGoldOutThisSession()
 	GoldTracker:UpdateBalance()
@@ -80,10 +80,10 @@ function GoldTracker.Reset()
 	GoldTracker:UpdateAllBank()
 	GoldTracker:UpdateAllBalance()
 	
-	GoldTrackerIndicatorGoldInLastResetText:SetText("0g")
-	GoldTrackerIndicatorGoldOutLastResetText:SetText("0g")
-	GoldTrackerIndicatorGoldOutThisSessionText:SetText("0g")
-	GoldTrackerIndicatorGoldOutThisSessionText:SetText("0g")
+	GoldTrackerGuiOverviewGoldInLastReset:SetText("0g")
+	GoldTrackerGuiOverviewGoldOutLastReset:SetText("0g")
+	GoldTrackerGuiOverviewGoldOutThisSession:SetText("0g")
+	GoldTrackerGuiOverviewGoldOutThisSession:SetText("0g")
 end
  
 function GoldTracker.OnPlayerMoneyUpdate(eventCode, newMoney, oldMoney, reason)
@@ -112,36 +112,36 @@ function GoldTracker.OnBankMoneyUpdate(eventCode, newMoney, oldMoney)
 end
 
 
-function GoldTracker.UpdateStartGoldLastResetText()
-	GoldTrackerIndicatorStartGoldLastResetText:SetText(string.format(GoldTracker.savedVariables.resetBalance .. "g"))
+function GoldTracker.UpdateStartGoldLastReset()
+	GoldTrackerGuiOverviewStartGoldLastReset:SetText(string.format(GoldTracker.savedVariables.resetBalance .. "g"))
 end
 
 function GoldTracker.UpdateGoldInLastReset()
 	GoldTracker.savedVariables.income=GoldTracker.savedVariables.income+GoldTracker.diff
-	GoldTrackerIndicatorGoldInLastResetText:SetText(string.format(GoldTracker.savedVariables.income .. "g"))
+	GoldTrackerGuiOverviewGoldInLastReset:SetText(string.format(GoldTracker.savedVariables.income .. "g"))
 end
 
 function GoldTracker.UpdateGoldOutLastReset()
 	GoldTracker.savedVariables.expenses=GoldTracker.savedVariables.expenses+GoldTracker.diff
-	GoldTrackerIndicatorGoldOutLastResetText:SetText(string.format(GoldTracker.savedVariables.expenses .. "g"))
+	GoldTrackerGuiOverviewGoldOutLastReset:SetText(string.format(GoldTracker.savedVariables.expenses .. "g"))
 end
 
-function GoldTracker.UpdateStartGoldThisSessionText()
-	GoldTrackerIndicatorStartGoldThisSessionText:SetText(string.format(GoldTracker.StartGoldThisSession .. "g"))
+function GoldTracker.UpdateStartGoldThisSession()
+	GoldTrackerGuiOverviewStartGoldThisSession:SetText(string.format(GoldTracker.StartGoldThisSession .. "g"))
 end
 
 function GoldTracker.UpdateGoldInThisSession()
 	GoldTracker.GoldInThisSession=GoldTracker.GoldInThisSession+GoldTracker.diff
-	GoldTrackerIndicatorGoldInThisSessionText:SetText(string.format(GoldTracker.GoldInThisSession .. "g"))
+	GoldTrackerGuiOverviewGoldInThisSession:SetText(string.format(GoldTracker.GoldInThisSession .. "g"))
 end
 
 function GoldTracker.UpdateGoldOutThisSession()
 	GoldTracker.GoldOutThisSession=GoldTracker.GoldOutThisSession+GoldTracker.diff
-	GoldTrackerIndicatorGoldOutThisSessionText:SetText(string.format(GoldTracker.GoldOutThisSession .. "g"))
+	GoldTrackerGuiOverviewGoldOutThisSession:SetText(string.format(GoldTracker.GoldOutThisSession .. "g"))
 end
 
 function GoldTracker.UpdateBalance()
-	GoldTrackerIndicatorBalanceText:SetText(string.format(GetCurrentMoney() .. "g"))
+	GoldTrackerGuiOverviewBalance:SetText(string.format(GetCurrentMoney() .. "g"))
 end
 
 function GoldTracker.UpdateAllLastReset()
@@ -151,7 +151,7 @@ function GoldTracker.UpdateAllLastReset()
 		GoldTracker.savedVariablesAlt = ZO_SavedVars:New("GoldTrackerSavedVariables", 1, nil, LastResetDefaults, "Default", GetDisplayName(), charactername);
 		sum = sum + GoldTracker.savedVariablesAlt.resetBalance;
 	end
-	GoldTrackerIndicatorAllLastResetText:SetText(string.format(sum .. "g"))
+	GoldTrackerGuiOverviewAllLastReset:SetText(string.format(sum .. "g"))
 end
 
 function GoldTracker.UpdateAllIncome()
@@ -161,7 +161,7 @@ function GoldTracker.UpdateAllIncome()
 		GoldTracker.savedVariablesAlt = ZO_SavedVars:New("GoldTrackerSavedVariables", 1, nil, LastResetDefaults, "Default", GetDisplayName(), charactername);
 		sum = sum + GoldTracker.savedVariablesAlt.income;
 	end
-	GoldTrackerIndicatorAllIncomeText:SetText(string.format(sum .. "g"))
+	GoldTrackerGuiOverviewAllIncome:SetText(string.format(sum .. "g"))
 end
 
 function GoldTracker.UpdateAllExpenses()
@@ -171,11 +171,11 @@ function GoldTracker.UpdateAllExpenses()
 		GoldTracker.savedVariablesAlt = ZO_SavedVars:New("GoldTrackerSavedVariables", 1, nil, LastResetDefaults, "Default", GetDisplayName(), charactername);
 		sum = sum + GoldTracker.savedVariablesAlt.expenses;
 	end
-	GoldTrackerIndicatorAllExpensesText:SetText(string.format(sum .. "g"))
+	GoldTrackerGuiOverviewAllExpenses:SetText(string.format(sum .. "g"))
 end
 
 function GoldTracker.UpdateAllBank()
-	GoldTrackerIndicatorAllBankText:SetText(string.format(GoldTracker.savedVariablesAccount.bank .. "g"))
+	GoldTrackerGuiOverviewAllBank:SetText(string.format(GoldTracker.savedVariablesAccount.bank .. "g"))
 end
 
 function GoldTracker.UpdateAllBalance()
@@ -186,7 +186,7 @@ function GoldTracker.UpdateAllBalance()
 		sum = sum + GoldTracker.savedVariablesAlt.resetBalance + GoldTracker.savedVariablesAlt.income + GoldTracker.savedVariablesAlt.expenses;
 	end
 	sum = sum + GoldTracker.savedVariablesAccount.bank;
-	GoldTrackerIndicatorAllBalanceText:SetText(string.format(sum .. "g"))
+	GoldTrackerGuiOverviewAllBalance:SetText(string.format(sum .. "g"))
 end
 -- This function will create new labels in the stats gui for all alts and populate the info
 function GoldTracker.UpdateAllAlts()
@@ -194,31 +194,31 @@ function GoldTracker.UpdateAllAlts()
 	if (numchars == 1) then
 		return
 	end
-	GoldTrackerIndicator:SetDimensions(255,305+numchars*20);
-	GoldTrackerIndicatorBackdrop:SetDimensions(255,305+numchars*20);
+	GoldTrackerGuiOverview:SetDimensions(255,305+numchars*20);
+	GoldTrackerGuiOverviewBackdrop:SetDimensions(255,305+numchars*20);
 	local mylabel = ""
 	local altstatus = ""
 	local index = 1
 	for i=1, numchars do
 		charname = GoldTracker.savedVariablesAccount.charlist[i];
 		if (charname ~= GetUnitName("Player")) then
-			mylabel = "GoldTrackerIndicatorAlt"..index
-			Alt = wm:CreateControl(mylabel, GoldTrackerIndicator, CT_LABEL);
+			mylabel = "GoldTrackerGuiOverviewAlt"..index
+			Alt = wm:CreateControl(mylabel, GoldTrackerGuiOverview, CT_LABEL);
 			Alt:SetColor(0.53, 0.61, 0.49, 1)
 			Alt:SetFont("ZoFontChat")
 			Alt:SetWrapMode(TRUNCATE)
 			Alt:SetDrawLayer(1)
-			Alt:SetAnchor(TOPLEFT, GoldTrackerIndicator, TOPLEFT, 8 , 175+20*index)
+			Alt:SetAnchor(TOPLEFT, GoldTrackerGuiOverview, TOPLEFT, 8 , 175+20*index)
 			Alt:SetDimensions(245, 30)
 			Alt:SetScale(1)
 			Alt:SetText(GoldTracker.savedVariablesAccount.charlist[i]);
-			mylabel = "GoldTrackerIndicatorAltText"..index
-			Alt = wm:CreateControl(mylabel, GoldTrackerIndicator, CT_LABEL);
+			mylabel = "GoldTrackerGuiOverviewAlt"..index
+			Alt = wm:CreateControl(mylabel, GoldTrackerGuiOverview, CT_LABEL);
 			Alt:SetColor(0.53, 0.61, 0.49, 1)
 			Alt:SetFont("ZoFontChat")
 			Alt:SetWrapMode(TRUNCATE)
 			Alt:SetDrawLayer(1)
-			Alt:SetAnchor(TOPLEFT, GoldTrackerIndicator, TOPLEFT, 8 , 175+20*index)
+			Alt:SetAnchor(TOPLEFT, GoldTrackerGuiOverview, TOPLEFT, 8 , 175+20*index)
 			Alt:SetDimensions(245, 30)
 			Alt:SetScale(1)
 			Alt:SetHorizontalAlignment(TEXT_ALIGN_RIGHT)
@@ -237,17 +237,17 @@ function GoldTracker.OnAddOnLoaded(event, addonName)
   end
 end
 
-function GoldTracker.OnIndicatorMoveStop()
-  GoldTracker.savedVariables.left = GoldTrackerIndicator:GetLeft()
-  GoldTracker.savedVariables.top = GoldTrackerIndicator:GetTop()
+function GoldTracker.OnGuiOverviewMoveStop()
+  GoldTracker.savedVariables.left = GoldTrackerGuiOverview:GetLeft()
+  GoldTracker.savedVariables.top = GoldTrackerGuiOverview:GetTop()
 end
 
 function GoldTracker:RestorePosition()
   local left = self.savedVariables.left
   local top = self.savedVariables.top
  
-  GoldTrackerIndicator:ClearAnchors()
-  GoldTrackerIndicator:SetAnchor(TOPLEFT, GuiRoot, TOPLEFT, left, top)
+  GoldTrackerGuiOverview:ClearAnchors()
+  GoldTrackerGuiOverview:SetAnchor(TOPLEFT, GuiRoot, TOPLEFT, left, top)
 end
 
 -- Adds the charactername to the list of characters using this addon
