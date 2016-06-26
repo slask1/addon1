@@ -8,3 +8,4 @@
 
 GoldTracker.xml
 GoldTracker.lua
+GoldTrackerGui.lua
