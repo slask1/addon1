@@ -12,4 +12,4 @@ Supported slashcommands:
 - */goldtracker resetall* - resets all characters stats
 
 
-Version 1.0.0 - Supports ESO 2.4.8 DB patch
+Version 2.0.0 - Supports ESO 2.4.8 DB patch
